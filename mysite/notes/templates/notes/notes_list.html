@@ -1,0 +1,39 @@
+{%extends 'base.html' %}
+{%load static%}     
+
+{%block content%}
+
+
+
+<div class="row mb-5">
+    <div class="col">
+<div class="notes-list-heading text-center">
+    <h2>These are the notes</h2>
+</div>
+</div>
+</div>
+
+<div class="row">
+{%for i in notes%}
+
+<div class="col-md-4">
+        <div class="card mb-4  me-1">
+            <div class="card-header text-center fs-5">
+                {{i.title}}
+            </div>
+
+            <div class="card-body">
+              <p class="card-text">{{i.text|truncatechars:15}}</p> <!--Characyers of text are truccated . only 15 characters are visible-->
+            </div>
+
+            <div class="card-footer">
+              <a href="{%url 'notes.detail' pk=i.id %}" class="btn btn-primary btn-sm">View Note</a>
+            </div>
+          
+
+</div>
+</div>
+{% endfor %}
+</div>
+
+{%endblock%}

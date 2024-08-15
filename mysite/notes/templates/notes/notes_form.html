@@ -1,0 +1,39 @@
+{%extends 'base.html' %}
+{%load static%}     
+
+{%block content%}
+ 
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+
+            <div class="card-header text-center">
+                Create Note
+            </div>
+
+            <div class="card-body">
+                
+<form action="" method="post">
+
+{% csrf_token %}  <!--this is a security check-->
+{{form}}
+<button class="btn btn-success btn-sm" type="submit">Submit</button>
+<a href="{%url 'notes.list' %}" class="btn btn-sm btn-primary">Back</a>
+</form>
+
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+{%if form.errors%}  <!--these are form errors which will occur if naufil word is entered in title ... for more details see form.py clean_title()-->
+<div class="alert alert-danger">
+{{form.errors}}
+</div>
+{%endif%}
+
+{%endblock%}

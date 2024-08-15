@@ -1,0 +1,31 @@
+{%extends 'base.html' %}
+{%load static%}     
+
+{%block content%}
+ 
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+
+        <div class="card m-2">
+            <div class="card-header">
+                Note Details
+            </div>
+
+            <div class="card-body">
+                <h1 class="fs-5">{{note.title}}</h1>
+              <p class="card-text">{{note.text}}</p> <!--Characyers of text are truccated . only 15 characters are visible-->
+            </div>
+
+            <div class="card-footer">
+                <a href="{%url 'notes.update' pk=note.id %}" class="btn btn-warning">Edit</a>
+                <a href="{%url 'notes.list' %}" class="btn btn-primary">Back</a>
+                <a href="{%url 'notes.delete' pk=note.id %}" class="btn btn-danger">Delete</a>
+            </div>
+
+           
+</div>
+</div>
+</div>
+
+{%endblock%}

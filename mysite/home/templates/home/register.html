@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%load static%}     
+{%block content%}
+
+
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">Sign up</div>
+            <div class="card-body">
+                    <form action="" method="post">
+                        {%csrf_token%}
+                        
+                        {{form.as_p}}  <!--here login form fields are used as paragraph tags-->
+                        <input type="submit" class="btn btn-success btn-sm" value="Sign up" name="Submit">
+                        
+                        </form>
+    
+    </div>
+</div>
+</div>
+</div>
+ 
+ {%endblock%} 
